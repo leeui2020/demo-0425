@@ -1,0 +1,13 @@
+%flex {
+  display: flex;
+
+  &-middle {
+    @extend %flex;
+    align-items: center;
+  }
+
+  &-center {
+    @extend %flex-middle;
+    justify-content: center;
+  }
+}

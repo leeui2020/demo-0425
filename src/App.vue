@@ -1,12 +1,14 @@
 <template>
-  <div class="content"></div>
+  <div class="content">
+    <router-view />
+  </div>
 </template>
 
 <script setup>
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .content {
   margin: 0 auto;
   padding: 16px;
