@@ -5,7 +5,10 @@ import { loadTheme } from './layout'
 import router from './router'
 import elementUI from './element-ui'
 
-loadTheme('default').then(() => {
+const url = new URL(location.href)
+const theme = url.searchParams.get('theme') || 'default'
+
+loadTheme(theme).then(() => {
   createApp({
     setup () {
       return () => h(Suspense, h(App))

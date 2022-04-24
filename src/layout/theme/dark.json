@@ -1,1 +1,7 @@
-{}
+{
+  "color-primary": "#6858fe",
+  "bg-color": "#424242",
+  "bg-tabs": "#303030",
+  "text-color-df": "#ffffff",
+  "text-color-reverse": "#fff"
+}

@@ -69,6 +69,10 @@ function handleClick (item) {
     &.is-active {
       background: var(--color-primary);
     }
+
+    &.is-active > &-label {
+      color: var(--text-color-reverse);
+    }
   }
 
   &::after {

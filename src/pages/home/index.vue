@@ -29,12 +29,16 @@
       </div>
     </div>
   </div>
+  <div class="right">
+    <a href="javascript:;" @click="switchTheme">切换主题</a>
+  </div>
 </template>
 
 <script setup>
 import { getTabs, getProps, getOthers } from '@/api/base'
 import { useRoute, useRouter } from 'vue-router'
 import { computed, ref, watch } from 'vue'
+import { loadTheme } from '../../layout'
 
 const route = useRoute()
 const router = useRouter()
@@ -64,6 +68,20 @@ watch(tabSelected, async () => {
 
 const others = await getOthers()
 const othersModel = ref(Object.fromEntries(others.map((v) => [v.id, ''])))
+
+function switchTheme () {
+  const theme = route.query.theme || 'default'
+  const next = theme === 'default' ? 'dark' : 'default'
+  router.replace({
+    name: route.name,
+    params: route.params,
+    query: {
+      ...route.query,
+      theme: next
+    }
+  })
+  loadTheme(next)
+}
 </script>
 
 <style lang="scss" scoped>
@@ -105,6 +123,25 @@ const othersModel = ref(Object.fromEntries(others.map((v) => [v.id, ''])))
     padding-right: 15px;
     margin-bottom: 10px;
     box-sizing: border-box;
+  }
+}
+
+.right {
+  top: 0;
+  right: 0;
+  height: 45px;
+  padding: 16px;
+  position: absolute;
+  @extend %flex-middle;
+  & > a {
+    color: var(--color-primary);
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+    &:active {
+      transform: translate(1px, 1px);
+    }
   }
 }
 </style>
