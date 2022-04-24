@@ -2,5 +2,6 @@ export const baseURL = '/api/'
 
 export const apiMap = {
   getTabs: 'tabs',
-  getProps: 'props'
+  getProps: 'props',
+  getOthers: 'others'
 }

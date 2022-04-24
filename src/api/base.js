@@ -14,3 +14,8 @@ export function getProps () {
   return request.get(apiMap.getProps)
     .then(({ data: { data }}) => data)
 }
+
+export function getOthers () {
+  return request.get(apiMap.getOthers)
+    .then(({ data: { data }}) => data)
+}

@@ -3,6 +3,7 @@ import App from './App.vue'
 import registComponent from './components'
 import { loadTheme } from './layout'
 import router from './router'
+import elementUI from './element-ui'
 
 loadTheme('default').then(() => {
   createApp({
@@ -10,6 +11,7 @@ loadTheme('default').then(() => {
       return () => h(Suspense, h(App))
     }
   })
+    .use(elementUI)
     .use(registComponent)
     .use(router)
     .mount('#app')
