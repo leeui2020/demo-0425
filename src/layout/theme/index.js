@@ -9,6 +9,7 @@ const getSheet = (() => {
   return () => {
     if (!stylesheet) {
       stylesheet = document.createElement('style')
+      stylesheet.type = 'text/css'
       document.head.appendChild(stylesheet)
     }
     return stylesheet
@@ -31,6 +32,6 @@ export async function loadTheme (id) {
   theme.value = themeMap
 
   getSheet().innerText = `:root {${
-    Object.entries(res.default).map(([k, v]) => `--${k}: ${v}`).join(';')
+    Object.entries(res.default).map(([k, v]) => `--${k}: ${v}`).join(';\n')
   }}`
 }

@@ -2,7 +2,6 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import ViteRequireContext from '@originjs/vite-plugin-require-context'
 import mockServer from 'vite-plugin-mock-server'
-import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({

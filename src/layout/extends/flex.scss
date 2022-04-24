@@ -1,6 +1,11 @@
 %flex {
   display: flex;
 
+  &-top {
+    @extend %flex;
+    align-items: flex-start;
+  }
+
   &-middle {
     @extend %flex;
     align-items: center;

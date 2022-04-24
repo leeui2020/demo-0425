@@ -9,3 +9,8 @@ export function getTabs () {
       label: item.label
     })))
 }
+
+export function getProps () {
+  return request.get(apiMap.getProps)
+    .then(({ data: { data }}) => data)
+}
